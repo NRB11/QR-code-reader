@@ -14,19 +14,18 @@ while camera == True:
     success, frame = cap.read()
     
     for code in decode(frame):
-        if code.data.decode('utf-8') not in used_code:
+        if (code.data.decode('utf-8')) not in used_code:
             print('Approved')
             print(code.data.decode('utf-8'))
             used_code.append(code.data.decode('utf-8'))
             time.sleep(5) 
-        
         elif code.data.decode('utf-8') in used_code:
             print('Not Approved')
             time.sleep(5)
-        else:
-            pass
+        
     
     cv2.imshow('Testing_QR_scanner', frame)
     cv2.waitKey(1)
     
-    
+    if print(code.data.decode('utf-8')) == '1':
+        print('damn')   

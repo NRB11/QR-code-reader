@@ -13,5 +13,5 @@ while camera == True:
         print(code.type)
         print(code.data.decode('utf-8'))
     
-    cv2.imshow('Testing_QR_scanner',frame)
+    cv2.imshow('Testing_QR_scanner', frame)
     cv2.waitKey(1)

@@ -1,5 +1,17 @@
 import cv2
 from pyzbar.pyzbar import decode
 
-img = cv2.imread('QR_yt_song.png')
-print(decode(img))
+cap = cv2.VideoCapture(0)
+cap.set(3, 640)
+cap.set(4, 480)
+camera = True
+
+while camera == True:
+    success, frame = cap.read()
+    
+    for code in decode(frame):
+        print(code.type)
+        print(code.data.decode('utf-8'))
+    
+    cv2.imshow('Testing_QR_scanner',frame)
+    cv2.waitKey(1)

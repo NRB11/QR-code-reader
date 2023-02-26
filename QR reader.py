@@ -22,10 +22,10 @@ while camera == True:
         elif code.data.decode('utf-8') in used_code:
             print('Not Approved')
             time.sleep(5)
-        
+        if code.data.decode('utf-8') == '1':
+            print('damn')
     
     cv2.imshow('Testing_QR_scanner', frame)
     cv2.waitKey(1)
     
-    if print(code.data.decode('utf-8')) == '1':
-        print('damn')   
+       

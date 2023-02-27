@@ -14,6 +14,22 @@ while camera == True:
     success, frame = cap.read()
     
     for code in decode(frame):
+        QRCode = code.data.decode('utf-8')
+        match QRCode:
+            case "1":
+                print("box 1")
+                time.sleep(5)
+            case "2":
+                print("box 2")
+                time.sleep(5)
+            case "3":
+                print("box 3")
+                time.sleep(5)
+            case "4":
+                print("box 4")
+                time.sleep(5) 
+    """
+    
         if (code.data.decode('utf-8')) not in used_code:
             print('Approved')
             print(code.data.decode('utf-8'))
@@ -24,8 +40,6 @@ while camera == True:
             time.sleep(5)
         if code.data.decode('utf-8') == '1':
             print('damn')
-    
+    """
     cv2.imshow('Testing_QR_scanner', frame)
     cv2.waitKey(1)
-    
-       

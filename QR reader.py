@@ -21,14 +21,18 @@ while camera == True:
             case "1":
                 def open_box1_py():
                     call(["python", "Box1.py"])
-                    return open_box1_py()
+                    
+                open_box1_py()
                 time.sleep(5)
+            
             case "2":
                 print("box 2")
                 time.sleep(5)
+            
             case "3":
                 print("box 3")
                 time.sleep(5)
+            
             case "4":
                 print("box 4")
                 time.sleep(5) 

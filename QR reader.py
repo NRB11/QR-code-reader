@@ -9,8 +9,7 @@ cap.set(3, 640)
 cap.set(4, 480)
 used_code = []
 
-def open_box1_py():
-    call(["python", "Box1.py"])
+
 
 camera = True
 while camera == True:
@@ -20,7 +19,9 @@ while camera == True:
         QRCode = code.data.decode('utf-8')
         match QRCode:
             case "1":
-                open_box1_py()
+                def open_box1_py():
+                    call(["python", "Box1.py"])
+                    return open_box1_py()
                 time.sleep(5)
             case "2":
                 print("box 2")

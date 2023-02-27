@@ -21,6 +21,7 @@ while(key != 27):
 
     #Defining the colors
     color = "Undefined"
+    """
     Colorstate = hue_value
     match Colorstate:
         case "< 5":
@@ -35,6 +36,22 @@ while(key != 27):
             color = "BLUE"
         case "< 170":
             color = "VIOLET"
+    """         
+    if hue_value < 5:
+        color = "RED"
+    elif hue_value < 22:
+        color = "ORANGE"
+    elif hue_value < 33:
+        color = "YELLOW"
+    elif hue_value < 78:
+        color = "GREEN"
+    elif hue_value < 131:
+        color = "BLUE"
+    elif hue_value < 170:
+        color = "VIOLET"
+    else:
+        color = "RED"
+    
         
     #Checking if the camera is pointed at a glove
 if color == "BLUE":

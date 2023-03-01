@@ -4,7 +4,7 @@ import time
 from subprocess import call
 
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 cap.set(3, 640)
 cap.set(4, 480)
 used_code = []
@@ -35,8 +35,12 @@ while camera == True:
             
             case "4":
                 print("box 4")
-                cv2.destroyAllWindows()
-                time.sleep(5) 
+                closeCAM()
+                break
     
+    def closeCAM():
+        cv2.destroyAllWindows()
+        
     cv2.imshow('Testing_QR_scanner', frame)
     cv2.waitKey(1)
+    

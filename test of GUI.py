@@ -1,6 +1,7 @@
 from tkinter import *
 from subprocess import call   
 import cv2
+from QR_reader import closeCAM
 
 XY = "720x720"
 XL = 730
@@ -36,18 +37,24 @@ class Window(Frame):
 
         ##how we make buttons and give them functions
         #QRButton = Button(self, text="QR Reqder", command=self.openQR)
-        PrintHI = Button(self, text="Print Hi",command=self.PrintHI)
-                
+        PrintHI = Button(self, text= "Print Hi",command=self.PrintHI)
+        Kamera = Button(self, text= "Close Cam", command=self.ReleaseCam)      
         #How we place buttons       
         #QRButton.place(x=350,y=720/2)
         PrintHI.place(x=XL/2,y=YW/2)
+        Kamera.place(x=XL/3,y=YW/2)       
+    def ReleaseCam(self):
+        closeCAM()    
         
     def openQR(self):
         call(["python","QR reader.py"])
+    
     def QRpng(self):
         call(["python","1.png"])
+    
     def exitProgram(self):
         exit()
+    
     def PrintHI(self):
         print("Hi")
         

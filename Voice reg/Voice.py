@@ -13,7 +13,7 @@ def SpeakText(command):
 with sr.Microphone() as source2:
     print("Calibrating... ")
     r.adjust_for_ambient_noise(source2, duration=2)
-    print("Calibrated ")
+    print("Calibrated. You may speak ")
     mic = True
     while True:
     

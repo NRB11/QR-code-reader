@@ -20,7 +20,7 @@ while camera == True:
         match QRCode:
             case "1":
                 def open_box1_py():
-                    call(["python", "Box1.py"])
+                    call(["python", "QR\Box1.py"])
                     
                 open_box1_py()
                 time.sleep(5)

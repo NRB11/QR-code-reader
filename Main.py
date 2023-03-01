@@ -1,7 +1,7 @@
 #code from https://pythonbasics.org/tkinter-button/
 from tkinter import *
-#from QR_reader import closeCAM
 from subprocess import call   
+from PIL import ImageTk, Image
 
 XY = "720x720"
 XL = 720
@@ -9,10 +9,7 @@ YW = 720
 
 
 class Window(Frame):
-    """
-    def ReleaseCam(self):
-        closeCAM()
-    """    
+       
     def __init__(self, master=None):
         Frame.__init__(self, master)        
         self.master = master
@@ -29,39 +26,35 @@ class Window(Frame):
         editMenu.add_command(label="Undo")
         editMenu.add_command(label="Redo")
         menu.add_cascade(label="Edit", menu=editMenu)
-        
-        editMenu = Menu(menu)
-        editMenu.add_command(label="QR Reader",command=self.openQR)
-        editMenu.add_command(label="QR.png",command=self.QRpng)
-        menu.add_cascade(label="QR Options", menu=editMenu)
-
+                
         # widget can take all window
         self.pack(fill=BOTH, expand=1)
 
-        ##how we make buttons and give them functions
-        #QRButton = Button(self, text="QR Reqder", command=self.openQR)
-        PrintHI = Button(self, text= "Print Hi",command=self.PrintHI)
+        #how we make buttons and give them functions
+        #PrintHI = Button(self, text= "Print Hi",command=self.PrintHI,width= 20)            
         #Kamera = Button(self, text= "Close Cam", command=self.ReleaseCam)      
         #How we place buttons       
-        #QRButton.place(x=350,y=720/2)
-        PrintHI.place(x=XL/2,y=YW/2)
-        #Kamera.place(x=XL/3,y=YW/2)       
+        
+        #Title.place(x=(XL),y=YW/5)
+        #Kamera.place(x=XL/3,y=YW/2)
+        Label(self,text="Interface for Program",font=('Helvetica bold', 25),fg="green").pack(pady=20)
+        QRButton = Button(self, text="QR Reader", command=self.openQR,fg= "white",bg="black", width= 20)
+        PrintHI = Button(self, text="Print Hi", command=self.PrintHI,fg= "white",bg="black", width= 20)
+        
+        QRButton.place(x=XL/2-90,y=((YW/2)-30))
+        PrintHI.place(x=XL/2-90,y=YW/2)       
     
     def openQR(self):
         call(["python","QR_reader.py"])
-    
-    def QRpng(self):
-        call(["python","1.png"])
     
     def exitProgram(self):
         exit()
     
     def PrintHI(self):
-        print("Hi")
-        
+        print("Hi")  
        
 root = Tk()
-root.wm_title("Interface")
+root.wm_title("Main Interface")
 app = Window(root)
 root.geometry(XY)
 root.mainloop()

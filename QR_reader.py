@@ -3,7 +3,6 @@ from pyzbar.pyzbar import decode
 import time
 from subprocess import call
 
-
 cap = cv2.VideoCapture(0)
 cap.set(3, 640)
 cap.set(4, 480)
@@ -37,10 +36,10 @@ while camera == True:
             case "4":
                 print("box 4")
                 camera = False
-                time.sleep(5)    
+                time.sleep(5)
+                    
     
     cv2.imshow('Testing_QR_scanner', frame)
     cv2.waitKey(1)
 closeCAM()
-    
     

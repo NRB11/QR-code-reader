@@ -13,7 +13,7 @@ frame.pack()
 frame.place(anchor='center', relx=0.5, rely=0.5)
 
 # Create an object of tkinter ImageTk
-img = ImageTk.PhotoImage(Image.open("Images\QR_yt_song.png"))
+img = ImageTk.PhotoImage(Image.open("Images\QR_yt.png"))
 
 # Create a Label Widget to display the text or Image
 label = Label(frame, image = img)

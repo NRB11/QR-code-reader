@@ -1,7 +1,7 @@
 from tkinter import *
 from subprocess import call   
 import cv2
-from QR_reader import closeCAM
+#from QR_reader import closeCAM
 
 XY = "720x720"
 XL = 730

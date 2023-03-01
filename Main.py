@@ -71,12 +71,12 @@ class Window(Frame):
     
     #functions for the buttons and menu commands    
     def openQR(self):
-        call(["python","QR_reader.py"])
+        call(["python","QR\QR_reader.py"])
     
     def QRCodeFront(self):
-        call(["python","FrontImage.py"])
+        call(["python","QR\FrontImage.py"])
     def QRCodeYT(self):
-        call(["python","QR_yt.py"])
+        call(["python","QR\QR_yt.py"])
     
     def exitProgram(self):
         exit()

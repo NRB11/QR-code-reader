@@ -67,10 +67,9 @@ class Window(Frame):
         
         Title.pack(pady=20) 
         QRButton.place(x=XL-440,y=((YW)-200))
-        PrintHI.place(x=XL-440,y=((YW)-250))       
-        
-        
-          
+        PrintHI.place(x=XL-440,y=((YW)-250))        
+    
+    #functions for the buttons and menu commands    
     def openQR(self):
         call(["python","QR_reader.py"])
     
@@ -84,6 +83,7 @@ class Window(Frame):
     
     def PrintHI(self):
         print("Hi")  
-      
+
+#keeps the window functional and loops the window until you close it       
 app = Window(root)
 root.mainloop()

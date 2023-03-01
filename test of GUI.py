@@ -1,15 +1,18 @@
+#code from https://pythonbasics.org/tkinter-button/
 from tkinter import *
-from subprocess import call   
-import cv2
 #from QR_reader import closeCAM
+from subprocess import call   
 
 XY = "720x720"
-XL = 730
+XL = 720
 YW = 720   
 
 
 class Window(Frame):
-
+    """
+    def ReleaseCam(self):
+        closeCAM()
+    """    
     def __init__(self, master=None):
         Frame.__init__(self, master)        
         self.master = master
@@ -38,17 +41,14 @@ class Window(Frame):
         ##how we make buttons and give them functions
         #QRButton = Button(self, text="QR Reqder", command=self.openQR)
         PrintHI = Button(self, text= "Print Hi",command=self.PrintHI)
-        Kamera = Button(self, text= "Close Cam", command=self.ReleaseCam)      
+        #Kamera = Button(self, text= "Close Cam", command=self.ReleaseCam)      
         #How we place buttons       
         #QRButton.place(x=350,y=720/2)
         PrintHI.place(x=XL/2,y=YW/2)
-        Kamera.place(x=XL/3,y=YW/2)       
+        #Kamera.place(x=XL/3,y=YW/2)       
     
-    def ReleaseCam(self):
-        closeCAM()    
-        
     def openQR(self):
-        call(["python","QR reader.py"])
+        call(["python","QR_reader.py"])
     
     def QRpng(self):
         call(["python","1.png"])

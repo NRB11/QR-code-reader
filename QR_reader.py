@@ -9,7 +9,8 @@ cap.set(3, 640)
 cap.set(4, 480)
 used_code = []
 
-
+def closeCAM():
+        cv2.destroyAllWindows()
 
 camera = True
 while camera == True:
@@ -35,13 +36,11 @@ while camera == True:
             
             case "4":
                 print("box 4")
-                closeCAM()
-                time.sleep(5)
+                camera = False
+                time.sleep(5)    
     
-    def closeCAM():
-        cv2.destroyAllWindows()
-        
     cv2.imshow('Testing_QR_scanner', frame)
     cv2.waitKey(1)
+closeCAM()
     
     

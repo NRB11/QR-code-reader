@@ -43,6 +43,7 @@ class Window(Frame):
         #QRButton.place(x=350,y=720/2)
         PrintHI.place(x=XL/2,y=YW/2)
         Kamera.place(x=XL/3,y=YW/2)       
+    
     def ReleaseCam(self):
         closeCAM()    
         

@@ -14,13 +14,21 @@ with sr.Microphone() as source2:
     print("Calibrating... ")
     r.adjust_for_ambient_noise(source2, duration=2)
     print("Calibrated ")
+    mic = True
+    while True:
     
-    audio2 = r.listen(source2)
+        audio2 = r.listen(source2)
     
-    t.sleep(2)
+        t.sleep(2)
     
-    MyText = r.recognize_google(audio2)
-    MyText = MyText.lower()
+        MyText = r.recognize_google(audio2)
+        MyText = MyText.lower()
     
-    print("Did you say " + MyText)
-    SpeakText(MyText)
+        print("Did you say " + MyText)
+        if MyText == "1":
+            print("1")
+            mic = False
+            break
+        else:
+            print("nope no 1")
+        SpeakText(MyText)
